@@ -15,10 +15,14 @@ Thermostat.prototype.increase = function() {
   else { this.maxTemp = 32};
 
   if (this.temperature >= this.maxTemp) return this.maxTemp;
-  else return this.temperature ++
+  else return this.temperature ++;
 };
 
 Thermostat.prototype.decrease = function() {
-  if (this.temperature === 10) return 10
-  return this.temperature --
+  if (this.temperature === 10) return 10;
+  return this.temperature --;
+};
+
+Thermostat.prototype.resetTemp = function() {
+  this.temperature = 20;
 };

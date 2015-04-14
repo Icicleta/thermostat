@@ -29,6 +29,12 @@ describe("Thermostat", function() {
       expect(thermostat.temperature).toBe(10)
     });
 
+    it('20 when reset', function() {
+      thermostat.increase();
+      thermostat.resetTemp();
+      expect(thermostat.temperature).toBe(20);
+    });
+
     describe('when power saving mode', function(){
 
       it('is on, max of 25', function(){
