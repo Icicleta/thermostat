@@ -20,7 +20,13 @@ describe("Web", function() {
     it('has button to decrease temperature by one', function() {
       $('#down').click();
       expect('#temperature').toHaveText('19°C');
+    });
 
+    it('has button to reset to 20°C', function() {
+      $('#down').click();
+      expect('#temperature').toHaveText('19°C');
+      $('#reset').click();
+      expect('#temperature').toHaveText('20°C');
     });
 
   });

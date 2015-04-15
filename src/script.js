@@ -2,14 +2,23 @@ var onReady = function(){
 
   var thermostat = new Thermostat;
 
+  var showTemp = function() {
+    $('#temperature span').text(thermostat.temperature);
+  };
+
   $('#up').click(function() {
     thermostat.increase();
-    $('#temperature span').text(thermostat.temperature);
+    showTemp();
   });
 
   $('#down').click(function() {
     thermostat.decrease();
-    $('#temperature span').text(thermostat.temperature);
+    showTemp();
+  });
+
+  $('#reset').click(function() {
+    thermostat.resetTemp();
+    showTemp();
   });
 
 };
