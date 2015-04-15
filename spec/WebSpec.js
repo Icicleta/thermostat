@@ -55,6 +55,30 @@ describe("Web", function() {
       expect('#temperature').toHaveText('25°C');
     });
 
+    it('has yellow text when temp is between 18°C and 25°C', function() {
+      for(i=0; i < 10; i++) {
+        $('#down').click();
+      };
+      for(i=0; i < 10; i++) {
+        $('#up').click();
+      };
+      expect($('#temperature').css('color')).toEqual('rgb(255, 255, 0)');
+    });
+
+    it('has blue text when temp is below 18', function() {
+      for(i=0; i < 10; i++) {
+        $('#down').click();
+      };
+      expect($('#temperature').css('color')).toEqual('rgb(0, 0, 255)');
+    });
+
+    it('has red text when temp is above 24', function() {
+      for(i=0; i < 13; i++) {
+        $('#up').click();
+      };
+      expect($('#temperature').css('color')).toEqual('rgb(255, 0, 0)');
+    });
+
   });
 
 });

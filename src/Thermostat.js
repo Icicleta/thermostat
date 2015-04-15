@@ -4,6 +4,12 @@ function Thermostat(){
   this.maxTemp = 25;
 };
 
+// Thermostat.prototype.switchOnPowerSaver = function(){
+//   if (this.powerSaver === true) {
+//     this.maxTemp = 25;
+//   };
+// };
+
 Thermostat.prototype.switchPowerSaver = function(){
   this.powerSaver = !this.powerSaver;
   if (this.powerSaver === true) {

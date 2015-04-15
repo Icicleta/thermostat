@@ -3,6 +3,14 @@ var onReady = function(){
   var thermostat = new Thermostat;
 
   var showTemp = function() {
+    if (thermostat.temperature < 18) {
+      $('#temperature').css('color', 'blue');
+    } else if (thermostat.temperature < 25){
+      $('#temperature').css('color', 'yellow');
+    } else {
+      $('#temperature').css('color', 'red');
+    };
+
     $('#temperature span').text(thermostat.temperature);
   };
 
