@@ -6,12 +6,9 @@ function Thermostat(){
 
 Thermostat.prototype.switchPowerSaver = function(){
   this.powerSaver = !this.powerSaver;
-  alert('argh');
   if (this.powerSaver === true) {
     this.maxTemp = 25;
-    alert('argh');
     if (this.temperature > 25) {
-      alert('argh');
       return this.temperature = 25;
     };
   }

@@ -22,12 +22,11 @@ var onReady = function(){
   });
 
   $('#power-save').click(function() {
-    //if ($(this).is(':checked')) {
-    //   thermostat.switchPowerSaver();
-    // } else {
-    //   thermostat.switchPowerSaver();
-    // };
-    thermostat.switchPowerSaver();
+    if ($(this).is(':checked')) {
+      thermostat.switchPowerSaver();
+    } else {
+      thermostat.switchPowerSaver();
+    };
     showTemp();
   });
 
