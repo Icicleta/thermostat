@@ -29,6 +29,32 @@ describe("Web", function() {
       expect('#temperature').toHaveText('20°C');
     });
 
+    it('has a maximum of 25 with power saving on', function() {
+      $('#power-save').click();
+      $('#power-save').click();
+      for(i=0; i < 6; i++) {
+        $('#up').trigger('click');
+      };
+      expect('#temperature').toHaveText('25°C');
+    });
+
+    it('has a maximum of 32 with power saving off', function() {
+      $('#power-save').click();
+      for(i=0; i < 13; i++) {
+        $('#up').trigger('click');
+      };
+      expect('#temperature').toHaveText('32°C');
+    });
+
+    it('if temperature is above 25, returns to 25 when power saving on', function() {
+      $('#power-save').click();
+      for(i=0; i < 13; i++) {
+        $('#up').trigger('click');
+      };
+      $('#power-save').click();
+      expect('#temperature').toHaveText('25°C');
+    });
+
   });
 
 });

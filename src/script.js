@@ -21,6 +21,16 @@ var onReady = function(){
     showTemp();
   });
 
+  $('#power-save').click(function() {
+    //if ($(this).is(':checked')) {
+    //   thermostat.switchPowerSaver();
+    // } else {
+    //   thermostat.switchPowerSaver();
+    // };
+    thermostat.switchPowerSaver();
+    showTemp();
+  });
+
 };
 
 $(document).ready(function(){
