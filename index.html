@@ -5,12 +5,16 @@
   </head>
   <body>
     <div id="wrap" style="height: 800px; background: #e2e2e2; padding: 20px;">
+
       <div id='temperature' style="color: yellow;"><span>20</span>°C</div>
-      <button id='up'>Increase</button>
-      <button id='down'>Decrease</button>
-      <button id='reset'>Reset</button>
-      <p style="color: #fff;">Power Saving Mode<input type='checkbox' id='power-save' checked='checked'></p>
+      <form id='ajax_form' method='post'>
+        <button id='up'>Increase</button>
+        <button id='down'>Decrease</button>
+        <button id='reset'>Reset</button>
+        <p style="color: #fff;">Power Saving Mode<input type='checkbox' id='power-save' checked='checked'></p>
+      </form>
     </div>
+    <div id='store'></div>
 
     <!-- Jquery -->
     <script src="lib/jquery-1.11.2.js"></script>

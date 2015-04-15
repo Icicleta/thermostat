@@ -38,6 +38,32 @@ var onReady = function(){
     showTemp();
   });
 
+  var $form = $('#ajax_form');
+  var $result = $('#store');
+  $form.on('submit', function(event) {
+
+    console.log('Worked so far...');
+    console.log($('#temperature').text())
+    event.preventDefault;
+
+    $.ajax({
+            url: '/temperature_change',
+            data: {
+                   temp: $('#temperature').text()
+            }
+    }).done(function(data) {
+      $('#store').append(data);
+    }).fail(function(serverData) {
+            console.log(serverData);
+            $result.prepend("Error: " + serverData.statusText);
+          }).always(function() {
+            $result.prepend("Your Result: ")
+          });
+
+    return false
+
+  });
+
 };
 
 $(document).ready(function(){
