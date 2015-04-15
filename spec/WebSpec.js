@@ -76,7 +76,8 @@ describe("Web", function() {
       for(i=0; i < 13; i++) {
         $('#up').click();
       };
-      expect($('#temperature').css('color')).toEqual('rgb(255, 0, 0)');
+      // expect($('#temperature').css('color')).toEqual('rgb(255, 0, 0)');
+      expect('#temperature').toHaveCss({color: "rgb(255, 0, 0)"});
     });
 
   });
