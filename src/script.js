@@ -29,7 +29,7 @@ var onReady = function(){
     showTemp();
   });
 
-  $('#power-save').click(function() {
+  $('.power-save').click(function() {
     if ($(this).is(':checked')) {
       thermostat.switchPowerSaver();
     } else {
